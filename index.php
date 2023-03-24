@@ -71,14 +71,21 @@ if(isset($_POST['submit'])){
     </tr>
     </thead>
     <tbody>
-        <?php include('load_restaurants.php'); ?>
         <form method="POST">
             <span>Add a restaurant to favorite</span><br>
 <!--            <input type="number" name="user_id" class="form-control" placeholder="user_id">-->
             <input type="number" name="restaurant_id" required="" class="form-control" placeholder="restaurant_id">
             <button type="submit" name="submit" class="btn btn-success">Submit</button>
         </form>
+    <?php include('load_restaurants.php'); ?>
     </tbody>
 </table>
+<form action="logout.php" method="POST">
+    <button type="submit" class="btn btn-danger">Déconnexion</button>
+</form>
+
+<form action="favoris.php" method="POST">
+    <button type="submit" class="btn btn-danger">Go to favoris</button>
+</form>
 </body>
 </html>

@@ -61,6 +61,7 @@ if(isset($_POST['submit'])){
             <input type="number" name="restaurant_id" class="form-control" placeholder="restaurant_id">
             <button type="submit" name="submit" class="btn btn-success">Submit</button>
         </form>
+        <a href="index.php">Return to index</a>
     </tbody>
 </table>
 </body>
