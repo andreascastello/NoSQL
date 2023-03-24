@@ -5,8 +5,6 @@ session_start();
 
 
 if(isset($_POST['submit'])){
-
-
     require 'config.php';
 
     $last_restaurant = $collection->findOne(
@@ -20,22 +18,15 @@ if(isset($_POST['submit'])){
     $new_id = intval($last_restaurant['restaurant_id']) + 1;
 
     $insertOneResult = $collection->insertOne([
-
         'restaurant_id' => $new_id,
-
         'cuisine' => $_POST['cuisine'],
-
         'arrondissement' => $_POST['arrondissement'],
-
         'code_postal' => $_POST['code_postal'],
-
     ]);
-
 
     $_SESSION['success'] = "Resto created successfully";
 
     header("Location: index.php");
-
 }
 
 
@@ -98,6 +89,10 @@ if(isset($_POST['submit'])){
         </div>
 
     </form>
+
 </div>
+
+
 </body>
+
 </html>

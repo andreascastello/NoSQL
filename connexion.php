@@ -5,7 +5,7 @@ if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $user = $collection_user->findOne(['email' => $email]);
+    $user = $collection_users->findOne(['email' => $email]);
     if($user && password_verify($password, $user['password'])){
         $_SESSION['user_id'] = $user['user_id'];
         header("Location: index.php");

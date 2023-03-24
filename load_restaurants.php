@@ -43,4 +43,5 @@ foreach ($restaurants as $restaurant) {
     echo '<td>' . $restaurant['code_postal'] . '</td>';
     echo '</tr>';
 }
+
 ?>

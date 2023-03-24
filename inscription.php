@@ -2,7 +2,7 @@
 session_start();
 if(isset($_POST['submit'])){
     require 'config.php';
-    $user_restaurant = $collection_user->findOne(
+    $user_restaurant = $collection_users->findOne(
         [],
         [
             'limit' => 1,
@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
         ]
     );
     $new_id = intval($user_restaurant['user_id']) + 1;
-    $insertOneResult = $collection_user->insertOne([
+    $insertOneResult = $collection_users->insertOne([
 
         'user_id' => $new_id,
 
@@ -20,6 +20,7 @@ if(isset($_POST['submit'])){
 
         'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 
+        'favoris' => []
     ]);
     $_SESSION['success'] = "user created successfully";
     header("Location: connexion.php");
@@ -47,7 +48,7 @@ if(isset($_POST['submit'])){
         </div>
         <div class="form-group">
             <strong>Email :</strong>
-            <textarea class="form-control" name="email" placeholder="Email"></textarea>
+            <input type="email" name="email" required="" class="form-control" placeholder="Email">
         </div>
         <div class="form-group">
             <strong>Password :</strong>

@@ -1,10 +1,12 @@
 $(document).ready(function() {
     $('#restaurant-table th').click(function() {
         let prop = $(this).data('property');
-        if (localStorage.getItem('prop') === prop) {
+        if (localStorage.getItem('prop') === prop)
+        {
             localStorage.setItem('prop', `${prop}1`);
             prop = `${prop}1`;
-        } else {
+        }
+        else {
             localStorage.setItem('prop', `${prop}`);
         }
 
